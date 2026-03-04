@@ -1,0 +1,65 @@
+.lang-chart-card {
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  padding: 16px;
+  background: var(--bg-card);
+
+  @media (max-width: 480px) {
+    padding: 12px;
+  }
+}
+
+.lang-bar {
+  display: flex;
+  height: 8px;
+  border-radius: 3px;
+  overflow: hidden;
+  gap: 2px;
+  margin-bottom: 12px;
+}
+
+.lang-bar-segment {
+  min-width: 3px;
+  border-radius: 0;
+
+  &:first-child {
+    border-radius: 3px 0 0 3px;
+  }
+
+  &:last-child {
+    border-radius: 0 3px 3px 0;
+  }
+}
+
+.lang-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+
+  @media (max-width: 768px) {
+    gap: 4px 12px;
+  }
+}
+
+.lang-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.lang-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.lang-label {
+  color: var(--fg-default);
+  font-weight: 500;
+}
+
+.lang-pct {
+  color: var(--fg-muted);
+}

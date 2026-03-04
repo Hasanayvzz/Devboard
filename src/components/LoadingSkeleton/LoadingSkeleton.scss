@@ -1,0 +1,142 @@
+@keyframes shimmer {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.loading-skeleton {
+  padding: 8px 0;
+}
+
+.skeleton-top {
+  display: grid;
+  grid-template-columns: 296px 1fr;
+  gap: 24px;
+  align-items: start;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skeleton-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @media (max-width: 1024px) {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+.skeleton-avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  animation: shimmer 1.8s ease-in-out infinite;
+
+  @media (max-width: 1024px) {
+    width: 72px;
+    height: 72px;
+  }
+  @media (max-width: 480px) {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+.skeleton-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.skeleton-line {
+  height: 14px;
+  border-radius: 3px;
+  background: var(--bg-card);
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+.skeleton-line-lg {
+  width: 160px;
+  height: 20px;
+}
+.skeleton-line-md {
+  width: 120px;
+}
+
+.skeleton-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skeleton-stats {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--border-muted);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.skeleton-stat-block {
+  flex: 1;
+  height: 56px;
+  background: var(--bg-card);
+  border-right: 1px solid var(--border-muted);
+  animation: shimmer 1.8s ease-in-out infinite;
+  animation-delay: 0.1s;
+
+  &:last-child {
+    border-right: none;
+  }
+  &:nth-child(2) {
+    animation-delay: 0.25s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+}
+
+.skeleton-chart {
+  height: 110px;
+  border-radius: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-muted);
+  animation: shimmer 1.8s ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+
+.skeleton-heatmap {
+  height: 140px;
+  border-radius: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-muted);
+  animation: shimmer 1.8s ease-in-out infinite;
+  animation-delay: 0.35s;
+}
+
+.skeleton-loading-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+  color: var(--fg-muted);
+  font-size: 13px;
+
+  svg {
+    color: var(--fg-subtle);
+  }
+}

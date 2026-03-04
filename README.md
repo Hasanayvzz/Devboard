@@ -36,7 +36,7 @@ The standout feature is its AI integration: Devboard can generate a concise deve
 1. Clone the repository:
 
 ```bash
-   git clone https://github.com/yourusername/devboard.git
+   git clone https://github.com/hasanayvzz/devboard.git
    cd devboard
 ```
 

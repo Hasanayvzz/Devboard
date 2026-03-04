@@ -1,9 +1,11 @@
-# .github/workflows/deploy.yml
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
+
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -22,6 +24,8 @@ jobs:
         env:
           VITE_GEMINI_API_KEY: ${{ secrets.VITE_GEMINI_API_KEY }}
 
-      - uses: actions/deploy-pages@v4
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          folder: dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
